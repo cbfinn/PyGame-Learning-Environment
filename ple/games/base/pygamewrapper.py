@@ -173,11 +173,11 @@ class PyGameWrapper(object):
         """
         raise NotImplementedError("Please override this method")
 
-    def reset(self):
+    def reset(self, **kwargs):
         """
         Wraps the init() function, can be setup to reset certain poritions of the game only if needed.
         """
-        self.init()
+        self.init(**kwargs)
 
     def getScore(self):
         """

@@ -3,6 +3,9 @@ try:
 except:
     print("Couldn't import doom")
 from ple.games.catcher import Catcher
+from ple.games.catcherrand import CatcherRand
+from ple.games.catcherhard import CatcherHard
+from ple.games.catcheradapt import CatcherAdapt
 from ple.games.flappybird import FlappyBird
 from ple.games.monsterkong import MonsterKong
 from ple.games.pixelcopter import Pixelcopter

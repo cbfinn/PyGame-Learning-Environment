@@ -123,12 +123,12 @@ class PLE(object):
             # some pygame games preload the images
             # to speed resetting and inits up.
             pygame.display.set_mode((1, 1), pygame.NOFRAME)
-        
+
         #vizdoom needs an int
         #if defined?(DoomWrapper) and isinstance(self.game, DoomWrapper):
         #if isinstance(self.game, base.DoomWrapper):
         #    self.rng = rng
-        
+
         self.game.setRNG(self.rng)
         self.init()
 
@@ -181,7 +181,7 @@ class PLE(object):
 
         """
         actions = self.game.actions
-        
+
         if isinstance(actions, dict) or isinstance(actions, dict_values):
             actions = actions.values()
         actions = list(actions) #.values()
@@ -250,14 +250,14 @@ class PLE(object):
 
         return self.game.lives
 
-    def reset_game(self):
+    def reset_game(self, **kwargs):
         """
         Performs a reset of the games to a clean initial state.
         """
         self.last_action = []
         self.action = []
         self.previous_score = 0.0
-        self.game.reset()
+        self.game.reset(**kwargs)
 
     def getScreenRGB(self):
         """
